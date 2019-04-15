@@ -15,13 +15,13 @@ const Header = () => {
                         <nav className="menu">
                             <ul className="main_menu">
                                 <li>
-                                    <a href="/">Lịch Chiếu</a>
+                                    <a href="#lichchieu">Lịch Chiếu</a>
                                 </li>
                                 <li>
-                                    <a href="/">Cụm Rạp</a>
+                                    <a href="#lichchieu">Cụm Rạp</a>
                                 </li>
                                 <li>
-                                    <a href="/">Tin Tức</a>
+                                    <a href="#blog">Tin Tức</a>
                                 </li>
                                 <li>
                                     <a href="/">Ứng Dụng</a>

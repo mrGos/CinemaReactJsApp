@@ -1,36 +1,53 @@
 import React, { Component } from 'react'
+
 import Carousel from './Carousel'
 import TabContent from './TabContent'
 import HomeTool from './HomeTool'
+import Showtime from './../Showtime'
 import HighlightBlog from './HighlightBlog'
 
-import {getAllMovie} from './../../../Api/Movie/movieApi'
+import {getMoviesByCondition} from './../../../Api/Movie/movieApi'
 
 export default class Home extends Component {
 
 constructor(props){
     super(props)
-
+   
     this.state={
         nowShowingMovies:[],
         upComingMovies:[]
     }
+
 }
 
-getMovieData=()=>
-{
-    let result = []
-    result = getAllMovie();
-    if(result===undefined){
-        return []
-    }
-    return result;
+getMoviesByCondition=(statusType=1)=>
+{   
+    getMoviesByCondition(statusType).then(
+        res=>{
+            if(res===undefined){
+                console.log('get Movies undefined')     
+                return;   
+            }
+            if(statusType===1){
+                this.setState({
+                    nowShowingMovies:res 
+                   })
+            }else{
+                this.setState({
+                    upComingMovies:res 
+                   })
+            }
+           
+        }
+    ).catch(console.log)
+    
 }
-
 
 componentDidMount(){
-   // this.getMovieData()
+ this.getMoviesByCondition(1)  
+ this.getMoviesByCondition(2)
 }
+
     render() {
        
         return (
@@ -52,7 +69,7 @@ componentDidMount(){
                                 Phim Đang Chiếu </h6>
                         </div>
                       
-                        <TabContent getAllMovie={this.getAllMovie}/>
+                        <TabContent listMovies={this.state.nowShowingMovies}/>
                     </div>
                 </section>
                 <section className="newproduct bgwhite p-t-45 p-b-105">
@@ -62,11 +79,11 @@ componentDidMount(){
                                 Phim Sắp Chiếu
                              </h6>
                         </div>
-                        <TabContent getAllMovie={this.getAllMovie}/>
+                        <TabContent listMovies={this.state.upComingMovies}/>
                     </div>
                 </section>
 
-
+                <Showtime/>
                 {/* Blog */}
                 <HighlightBlog/>
             </div>

@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 export default class HighlightBlog extends Component {
   render() {
     return (
-        <section className="blog bgwhite p-t-94 p-b-65">
+        <section id="blog" className="blog bgwhite p-t-94 p-b-65">
         <div className="container">
             <div className="sec-title p-b-52">
                 <h3 className="m-text5 t-center">
