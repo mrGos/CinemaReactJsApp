@@ -22,8 +22,8 @@ export default class TabContent extends Component {
 
     
     render() {
-        console.log(this.props)
-        let ItemElm = mockupData.map(
+        //console.log(this.props.listMovies)
+        let ItemElm = this.props.listMovies.map(
             (item, index) => {
                 return <TabContentItem
                 item={item}

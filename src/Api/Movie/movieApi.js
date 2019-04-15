@@ -1,13 +1,24 @@
 import getUrl from '../../Common/UrlConfig';
-import Axios from 'axios';
- import axios from 'axios'
 
-const getAllMovie = ()=>{
-    let url= getUrl()+'movie/getall';
-    return axios.get(url)
-    .then(res =>res);
+ //import axios from 'axios'
+
+ import{pageSizeHomeDefault} from './../../Common/PageConfiguration'
+
+const getAllMovie = (statusType=1)=>{
+    let url= getUrl()+`movie/getallmovies?statusType=${statusType}`;
+   // console.log(url)
+    return fetch(url)
+          .then(results => results.json())
+}
+
+const getMoviesByCondition = ( statusType=1,top=pageSizeHomeDefault)=>{   
+    let url= getUrl()+`movie/getmoviesbycondition?top=${top}&statusType=${statusType}`;
+  //  console.log(url)
+    return fetch(url)
+          .then(results => results.json())
 }
 
 export{
-    getAllMovie
+    getAllMovie,
+    getMoviesByCondition
 }
