@@ -7,8 +7,8 @@ const Header = () => {
             <div className="container-menu-header">
                 <div className="wrap_header">
                     {/* Logo */}
-                    <a href="index.html" className="logo">
-                        <img src="./Assets/images/cgvlogo.png" alt="IMG-LOGO" />
+                    <a href="/" className="logo">
+                        <img src="https://www.cgv.vn/skin/frontend/cgv/default/images/cgvlogo.png" alt="IMG-LOGO" />
                     </a>
                     {/* Menu */}
                     <div className="wrap_menu">
@@ -49,25 +49,25 @@ const Header = () => {
             <div className="wrap_header_mobile">
                 {/* Logo moblie */}
                 <a href="index.html" className="logo-mobile">
-                    <img src="./Assets/images/cgvlogo.png" alt="IMG-LOGO" />
+                    <img src="%PUBLIC_URL%/Assets/images/cgvlogo.png" alt="IMG-LOGO" />
                 </a>
                 {/* Button show menu */}
                 <div className="btn-show-menu">
                     {/* Header Icon mobile */}
                     <div className="header-icons-mobile">
                         <a href="/" className="header-wrapicon1 dis-block">
-                            <img src="./Assets/images/icons/icon-header-01.png" className="header-icon1" alt="ICON" />
+                            <img src="%PUBLIC_URL%/Assets/images/icons/icon-header-01.png" className="header-icon1" alt="ICON" />
                         </a>
                         <span className="linedivide2" />
                         <div className="header-wrapicon2">
-                            <img src="./Assets/images/icons/icon-header-02.png" className="header-icon1 js-show-header-dropdown" alt="ICON" />
+                            <img src="%PUBLIC_URL%/Assets/images/icons/icon-header-02.png" className="header-icon1 js-show-header-dropdown" alt="ICON" />
                             <span className="header-icons-noti">0</span>
                             {/* Header cart noti */}
                             <div className="header-cart header-dropdown">
                                 <ul className="header-cart-wrapitem">
                                     <li className="header-cart-item">
                                         <div className="header-cart-item-img">
-                                            <img src="./Assets/images/item-cart-01.jpg" alt="IMG" />
+                                            <img src="%PUBLIC_URL%/Assets/images/item-cart-01.jpg" alt="IMG" />
                                         </div>
                                         <div className="header-cart-item-txt">
                                             <a href="/" className="header-cart-item-name">
@@ -80,7 +80,7 @@ const Header = () => {
                                     </li>
                                     <li className="header-cart-item">
                                         <div className="header-cart-item-img">
-                                            <img src="./Assets/images/item-cart-02.jpg" alt="IMG" />
+                                            <img src="%PUBLIC_URL%/Assets/images/item-cart-02.jpg" alt="IMG" />
                                         </div>
                                         <div className="header-cart-item-txt">
                                             <a href="/" className="header-cart-item-name">
@@ -93,7 +93,7 @@ const Header = () => {
                                     </li>
                                     <li className="header-cart-item">
                                         <div className="header-cart-item-img">
-                                            <img src="./Assets/images/item-cart-03.jpg" alt="IMG" />
+                                            <img src="%PUBLIC_URL%/Assets/images/item-cart-03.jpg" alt="IMG" />
                                         </div>
                                         <div className="header-cart-item-txt">
                                             <a href="/" className="header-cart-item-name">

@@ -9,3 +9,52 @@
 p{
   color:black;
 }
+
+#btnTicketDetail{   
+    margin-top: 20px;
+    background-color: orangered;
+    color: #fff;
+}
+
+.textBlack{
+  color:black;
+}
+
+.textWhite{
+  color:white;
+}
+
+.bgModalBlack{
+  background:rgba(0,0,0,0.8);
+}
+
+.modal-exlg{
+  max-width: 100% !important;
+}
+
+.circlePlay{
+  width: 60px;
+  height: 60px;
+  margin-top: 100px;   
+  margin-right:50px;
+
+
+}
+.bo-rad-100{
+  border-radius: 100px
+}
+.s-text0{
+  font-family: Montserrat-Regular;
+    font-size: 15px;
+    color: white;
+}
+
+.overlay {
+  position: absolute;
+  top: 30%;
+  left: 45%;
+  /* height: 100%;
+  width: 100%; */
+  z-index: 10;
+  background-color: rgba(0,0,0,0.5);
+}
