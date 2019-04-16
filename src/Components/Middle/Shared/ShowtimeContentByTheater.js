@@ -28,8 +28,9 @@ export default class ShowtimeContentByTheater extends Component {
     this.setState({
       theaterId:props.theaterId
     },()=>{
-
-      this.setShowtimes(this.state.movieId,this.state.theaterId)
+      
+      console.log(this.state.theaterId)
+      this.setShowtimes(this.props.movieItem.Id,this.state.theaterId)
 
       let contentElement =  document.getElementById(`theaterContent${this.state.theaterId}`);
       if(contentElement!=null)contentElement.style.display = "block";
@@ -37,6 +38,9 @@ export default class ShowtimeContentByTheater extends Component {
     })    
   }
   render() {    
+     //console.log(this.props.movieItem)
+    const{Image,Name,Rating,TimeSpan} = this.props.movieItem;
+
     let Element=this.state.showtimes.map((e,index)=>{
       return <TimeShowing
               item={e}
@@ -47,10 +51,10 @@ export default class ShowtimeContentByTheater extends Component {
         <div id={`theaterContent${this.state.theaterId}`} className="tabcontent">
         <div>
           <div className="row">
-            <div className="col-sm-2"><img src="./Assets/images/shazam_-_160.jpg" width={50} height={70} alt=""/></div>
+            <div className="col-sm-2"><img src={Image} width={50} height={70} alt=""/></div>
             <div className="col-sm-4">
-              <p>Shazam!</p>
-              <p>NC13 - 2h12'</p>
+              <p>{Name}</p>
+              <p>N{Rating}- {TimeSpan}</p>
             </div>
           </div>
           <div className="row">

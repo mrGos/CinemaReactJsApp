@@ -39,6 +39,7 @@ setTheaterId=(id)=>{
   }
 
   render() {
+    //console.log(this.props.movieItem)
     const theaterElement = this.state.theaters.map((item,index)=>{
       return <Theater 
            setTheaterId={this.setTheaterId}
@@ -62,7 +63,8 @@ setTheaterId=(id)=>{
             <button className="tablinks" ><h6> Galaxy Nguyễn Du</h6></button>
           </div> */}
         </div>
-        <ShowtimeContentByTheater theaterId={this.state.theaterId}/>
+        <ShowtimeContentByTheater theaterId={this.state.theaterId}
+                                  movieItem={this.props.movieItem}/>
         {/* <div id="theaterContent32" className="tabcontent">
           <div>
             <div className="row">

@@ -18,7 +18,15 @@ const getMoviesByCondition = ( statusType=1,top=pageSizeHomeDefault)=>{
           .then(results => results.json())
 }
 
+const getMovieById = ( id)=>{   
+  let url= getUrl()+`movie/getmoviebyid?id=${id}`;
+//  console.log(url)
+  return fetch(url)
+        .then(results => results.json())
+}
+
 export{
     getAllMovie,
-    getMoviesByCondition
+    getMoviesByCondition,
+    getMovieById
 }

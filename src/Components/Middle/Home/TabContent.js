@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import TabContentItem from './TabContentItem'
+import MovieModal from './../../Modal/MovieModal'
+
 const mockupData = [
     {
         title: 'Captain Marvel',
@@ -21,13 +23,19 @@ const mockupData = [
 export default class TabContent extends Component {
 
     
-    render() {
+
+    componentDidMount(){
+        
+    }
+    render() {      
         //console.log(this.props.listMovies)
         let ItemElm = this.props.listMovies.map(
             (item, index) => {
                 return <TabContentItem
                 item={item}
                     key={index}
+                    setMovieItem={this.props.setMovieItem}
+                   
                 />
             }
         )
@@ -39,8 +47,9 @@ export default class TabContent extends Component {
                         {ItemElm}
                     </div>
                 </div>
+               
             </div>
-
+           
         )
     }
 }

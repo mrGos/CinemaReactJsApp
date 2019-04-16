@@ -3,7 +3,6 @@ import React, { Component } from 'react'
 import Carousel from './Carousel'
 import TabContent from './TabContent'
 import HomeTool from './HomeTool'
-import Showtime from './../Showtime'
 import HighlightBlog from './HighlightBlog'
 
 import {getMoviesByCondition} from './../../../Api/Movie/movieApi'
@@ -15,11 +14,13 @@ constructor(props){
    
     this.state={
         nowShowingMovies:[],
-        upComingMovies:[]
+        upComingMovies:[],       
     }
-
 }
 
+
+
+  
 getMoviesByCondition=(statusType=1)=>
 {   
     getMoviesByCondition(statusType).then(
@@ -44,12 +45,13 @@ getMoviesByCondition=(statusType=1)=>
 }
 
 componentDidMount(){
+  
  this.getMoviesByCondition(1)  
  this.getMoviesByCondition(2)
 }
 
     render() {
-       
+        
         return (
             <div>
                 {/* Slide1 */}
@@ -69,7 +71,7 @@ componentDidMount(){
                                 Phim Đang Chiếu </h6>
                         </div>
                       
-                        <TabContent listMovies={this.state.nowShowingMovies}/>
+                        <TabContent listMovies={this.state.nowShowingMovies}  setMovieItem={this.props.setMovieItem}  />
                     </div>
                 </section>
                 <section className="newproduct bgwhite p-t-45 p-b-105">
@@ -79,13 +81,13 @@ componentDidMount(){
                                 Phim Sắp Chiếu
                              </h6>
                         </div>
-                        <TabContent listMovies={this.state.upComingMovies}/>
+                        <TabContent listMovies={this.state.upComingMovies} setMovieItem={this.props.setMovieItem}/>
                     </div>
                 </section>
 
-                <Showtime/>
+                {/* <Showtime/> */}
                 {/* Blog */}
-                <HighlightBlog/>
+                <HighlightBlog/>               
             </div>
 
         )
