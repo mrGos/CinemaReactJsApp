@@ -1,7 +1,24 @@
 import React, { Component } from 'react'
 
 export default class HomeTool extends Component {
+   
+    constructor(props) {
+      super(props)
+    
+      this.state = {
+        value:{}
+      }
+    }
+    
+    movieChange=(event)=>{
+        this.setState({value: event.target.value});
+    }
+
     render() {
+        //console.log(this.props.listMovies)
+        let listElement = this.props.listMovies.map((e,index)=>{
+                return <option key={index} value={e.Id} >{e.Name}</option>
+        })
         return (
             <section className="section mt-5 bg-light pb-0">
                 <div className="container">
@@ -13,11 +30,12 @@ export default class HomeTool extends Component {
                                         <label htmlFor="movie" className="font-weight-bold text-black">Phim</label>
                                         <div className="field-icon-wrap">
                                             <div className="icon"><span className="ion-ios-arrow-down" /></div>
-                                            <select name="movie" id="movie" className="form-control">
-                                                <option value>Shazam!(C13)</option>
+                                            <select name="movie" id="movie" className="form-control" onChange={this.movieChange} value={this.state.value} >
+                                                {/* <option value>Shazam!(C13)</option>
                                                 <option value>Chị Mười Ba (C18)</option>
                                                 <option value>Chú Voi Biết Bay - Dumbo</option>
-                                                <option value>Yêu Nhầm Bạn Thân - FriendZone (C16)</option>
+                                                <option value>Yêu Nhầm Bạn Thân - FriendZone (C16)</option> */}
+                                                {listElement}
                                             </select>
                                         </div>
                                     </div>
@@ -25,7 +43,7 @@ export default class HomeTool extends Component {
                                         <label htmlFor="rap" className="font-weight-bold text-black">Rạp</label>
                                         <div className="field-icon-wrap">
                                             <div className="icon"><span className="ion-ios-arrow-down" /></div>
-                                            <select name="theater" id="theater" className="form-control">
+                                            <select name="theater" id="theater" className="form-control" multiple={false}>
                                                 <option value>BHD Star Bitexco</option>
                                                 <option value>Galaxy - Nguyễn Du</option>
                                                 <option value>Galaxy - Quang Trung</option>
@@ -39,7 +57,7 @@ export default class HomeTool extends Component {
                                                 <label htmlFor="date" className="font-weight-bold text-black">Ngày Xem</label>
                                                 <div className="field-icon-wrap">
                                                     <div className="icon"><span className="ion-ios-arrow-down" /></div>
-                                                    <select name="date" id="date" className="form-control">
+                                                    <select name="date" id="date" className="form-control" multiple={false}>
                                                         <option value>Hôm nay (8/4)</option>
                                                         <option value>9/4</option>
                                                         <option value>10/4</option>
@@ -51,7 +69,7 @@ export default class HomeTool extends Component {
                                                 <label htmlFor="showtime" className="font-weight-bold text-black">Suất Chiếu</label>
                                                 <div className="field-icon-wrap">
                                                     <div className="icon"><span className="ion-ios-arrow-down" /></div>
-                                                    <select name="showtime" id="showtime" className="form-control">
+                                                    <select name="showtime" id="showtime" className="form-control" multiple={false}>
                                                         <option value>10:30</option>
                                                         <option value>11:45</option>
                                                         <option value>12:15</option>

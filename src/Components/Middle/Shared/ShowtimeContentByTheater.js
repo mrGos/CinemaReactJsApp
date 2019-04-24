@@ -48,10 +48,19 @@ export default class ShowtimeContentByTheater extends Component {
               />
     })
     return (
-        <div id={`theaterContent${this.state.theaterId}`} className="tabcontent">
+        <div id={`theaterContent${this.state.theaterId}`} className="tabcontent ">
         <div>
-          <div className="row">
-            <div className="col-sm-2"><img src={Image} width={50} height={70} alt=""/></div>
+          <div className="row d-flex justify-content-between btnDayOfWeek btn-group "  role="group">
+              <button className=" btn btnDayOfWeek" >Thu 2</button>  
+              <button className=" btn btnDayOfWeek" >Thu 3</button>   
+              <button className=" btn btnDayOfWeek">Thu 4</button>   
+              <button className=" btn btnDayOfWeek">Thu 5</button>   
+              <button className=" btn btnDayOfWeek">Thu 6</button>   
+              <button className=" btn btnDayOfWeek">Thu 7</button>   
+              <button className=" btn btnDayOfWeek">Chu Nhat</button>               
+          </div>
+          <div className="row mt-2">
+            <div className="col-sm-2 "><img src={Image} width={50} height={70} alt=""/></div>
             <div className="col-sm-4">
               <p>{Name}</p>
               <p>N{Rating}- {TimeSpan}</p>

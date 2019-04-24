@@ -61,7 +61,7 @@ componentDidMount(){
                     
                
                 
-                <HomeTool/>
+                <HomeTool listMovies={this.state.nowShowingMovies}/>
                 
                 {/* Movie */}
                 <section className="newproduct bgwhite p-t-45 p-b-105">
