@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 import Home from './../Components/Middle/Home/Home'
 import MovieDetail from './../Components/Middle/MovieDetail/index'
+import SearchMovie from './../Components/Middle/Shared/SearchMovie'
 
 import TrailerModal from './../Components/Modal/TrailerModal'
 
@@ -42,6 +43,15 @@ export default class Routes extends Component {
           setMovieItem={this.props.setMovieItem}
             match={match}
             history={history}
+          />}
+        />
+         <Route
+          path="/search/:name"
+          exact
+          render={({ match, history }) => <SearchMovie         
+            match={match}
+            history={history}
+            setMovieItem={this.props.setMovieItem}
           />}
         />
       </Switch>
