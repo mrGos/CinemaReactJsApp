@@ -55,8 +55,8 @@ export default class TabContent extends Component {
 
             <div>
                 <div className='container' >
-                    {/* <div className="btn left-button"  type="button"><i className="fa fa-chevron-left" onClick={this.props.onPrevMovie.bind(this,this.props.typeMovie)}></i></div>
-                    <div className="btn right-button"  type="button"><i className="fa fa-chevron-right" onClick={ this.props.onNextMovie.bind(this,this.props.typeMovie)}></i></div> */}
+                    <div className="btn left-button"  ><i className="fa fa-chevron-left" onClick={this.props.onPrevMovie.bind(this,this.props.typeMovie)}></i></div>
+                    <div className="btn right-button" ><i className="fa fa-chevron-right" onClick={ this.props.onNextMovie.bind(this,this.props.typeMovie)}></i></div>
                     <div className='row'>
                         {ItemElm}
                     </div>
