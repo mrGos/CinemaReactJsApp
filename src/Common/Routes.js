@@ -32,7 +32,7 @@ export default class Routes extends Component {
         <Route
           path="/"
           exact
-          render={() => <Home setMovieItem={this.props.setMovieItem} />}
+          render={({ match, history }) => <Home setMovieItem={this.props.setMovieItem} />}
         />
         <Route
           path="/movie/:id"

@@ -18,6 +18,14 @@ const getMoviesByCondition = ( statusType=1,top=pageSizeHomeDefault)=>{
           .then(results => results.json())
 }
 
+const getMoviesByPaging = (keyword='',page=3,pageSize=pageSizeHomeDefault, statusType=1)=>{   
+  let url= getUrl()+`movie/getallmoviespaging?keyword=${keyword}&page=${page}&pageSize=${pageSize}&status=${statusType}`;
+
+  //  console.log(url)
+  return fetch(url)
+        .then(results => results.json())
+}
+
 const getMovieById = ( id)=>{   
   let url= getUrl()+`movie/getmoviebyid?id=${id}`;
 //  console.log(url)
@@ -28,5 +36,6 @@ const getMovieById = ( id)=>{
 export{
     getAllMovie,
     getMoviesByCondition,
-    getMovieById
+    getMovieById,
+    getMoviesByPaging
 }

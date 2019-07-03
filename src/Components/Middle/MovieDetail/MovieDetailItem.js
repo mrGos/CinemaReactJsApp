@@ -25,7 +25,7 @@ export default class MovieDetailItem extends Component {
                         {/* Thumbnail */}
                         <div className="col-12 col-md-6">
                             <div className="cinema-details-thumbnail mb-80">
-                                <a href="/">
+                                <a href={`/movie/${Id}`}>
                                     <img src={Image} alt="NoImage" id="imgdetails" width={300} height={600} />
                                 </a>
                                 
