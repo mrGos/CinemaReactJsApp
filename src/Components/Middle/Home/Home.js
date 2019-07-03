@@ -12,7 +12,7 @@ export default class Home extends Component {
     constructor(props) {
         super(props)
 
-        this.state = {
+        this.state = {          
             nowShowingPageResult: {
                 Results: [],
                 CurrentPage: 1,
@@ -32,6 +32,7 @@ export default class Home extends Component {
         }
     }
 
+   
     //type  1: now, type 2: upcomming
     onNextMovie = (type) => {
         let nextPage = 1;
@@ -131,7 +132,7 @@ export default class Home extends Component {
 
 
 
-                <HomeTool listMovies={this.state.nowShowingMovies} />
+                <HomeTool setMovieItem={this.props.setMovieItem}/>
 
                 {/* Movie */}
 

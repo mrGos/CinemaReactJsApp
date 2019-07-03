@@ -26,6 +26,12 @@ const getMoviesByPaging = (keyword='',page=3,pageSize=pageSizeHomeDefault, statu
         .then(results => results.json())
 }
 
+const searchMovie = (keyword,page,pageSize)=>{
+  let url= getUrl()+`movie/searchmovie?keyword=${keyword}&page=${page}&pageSize=${pageSize}`;
+  return fetch(url)
+  .then(results => results.json())
+}
+
 const getMovieById = ( id)=>{   
   let url= getUrl()+`movie/getmoviebyid?id=${id}`;
 //  console.log(url)
@@ -37,5 +43,6 @@ export{
     getAllMovie,
     getMoviesByCondition,
     getMovieById,
-    getMoviesByPaging
+    getMoviesByPaging,
+    searchMovie
 }
