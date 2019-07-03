@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import TabContentItem from './TabContentItem'
 import MovieModal from './../../Modal/MovieModal'
+import Carousel from 'react-bootstrap/Carousel'
 
 const mockupData = [
     {
@@ -23,12 +24,23 @@ const mockupData = [
 export default class TabContent extends Component {
 
     
+    onNextMovieHandle = ()=>{
+        console.log('next click')
+        let typeMovie = this.props.typeMovie
+       this.props.onNextMovie(typeMovie)
+    }
+
+    onPrevPageHandle = ()=>{
+        let typeMovie = this.props.typeMovie
+        console.log('prev click')
+        this.props.onPrevMovie(typeMovie)
+    }
 
     componentDidMount(){
-        
+        console.log(this.props.onNextMovie)
     }
     render() {      
-        //console.log(this.props.listMovies)
+        
         let ItemElm = this.props.listMovies.map(
             (item, index) => {
                 return <TabContentItem
@@ -42,10 +54,13 @@ export default class TabContent extends Component {
         return (
 
             <div>
-                <div className='container'>
+                <div className='container' >
+                    {/* <div className="btn left-button"  type="button"><i className="fa fa-chevron-left" onClick={this.props.onPrevMovie.bind(this,this.props.typeMovie)}></i></div>
+                    <div className="btn right-button"  type="button"><i className="fa fa-chevron-right" onClick={ this.props.onNextMovie.bind(this,this.props.typeMovie)}></i></div> */}
                     <div className='row'>
                         {ItemElm}
                     </div>
+                    
                 </div>
                
             </div>
@@ -53,3 +68,5 @@ export default class TabContent extends Component {
         )
     }
 }
+
+
